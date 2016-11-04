@@ -8,3 +8,19 @@ def index(req):
 	:return:
 	"""
 	return render(req, "first/index.html")
+
+def blog(req):
+	"""
+	博文
+	:param req:
+	:return:
+	"""
+	return render(req, "first/blog.html")
+
+def blog_post(req):
+	"""
+	博文二级页
+	:param req:
+	:return:
+	"""
+	return render(req, "first/blog_post.html")
