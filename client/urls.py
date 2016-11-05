@@ -7,5 +7,5 @@ import views
 urlpatterns = [
 	url(r'^$', views.index),
 	url(r'^blog$', views.blog),
-	url(r'^blog_post$', views.blog_post),
+	url(r'^secondBlog$', views.secondBlog),
 ]

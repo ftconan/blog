@@ -32,37 +32,9 @@
     </div>
 
     <div id="main-wrapper">
-        <div id="menu">
-            <nav class="navbar navbar-default" role="navigation">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html#">
-                        <img src="/static/public/team/images/logo.png" alt="logo">
-                    </a>
-                </div>
+        <!--左侧导航栏-->
+        {% include "include/leftNav.html" %}
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="index.html#portfolio">Portfolio</a></li>
-                        <li><a href="index.html#testimonial">Testimonial</a></li>
-                        <li><a href="index.html#about">The Team</a></li>
-                        <li><a href="index.html#clients">Clients</a></li>
-                        <li class="active"><a href="index.html#blog-front">Blog</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </nav>
-        </div>
         <div id="container">
 
             <!-- BEGIN BLOG -->
@@ -70,6 +42,7 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div id="primary" class="row">
+
                             <div class="col-md-12">
                                 <!-- BEGIN ARTICLE -->
                                 <article class="post">
@@ -92,7 +65,7 @@
                                         <p>Etiam feugiat imperdiet rhoncus. Sed suscipit bibendum enim, sed volutpat tortor malesuada non. Morbi fringilla dui non purus porttitor mattis. Suspendisse quis vulputate risus. Phasellus erat velit, sagittis sed varius volutpat, placerat nec urna. Nam eu metus vitae dolor fringilla feugiat. Nulla facilisi. Etiam enim metus, luctus in adipiscing at, consectetur quis sapien. Duis imperdiet egestas.</p>
                                         <p>Phasellus quis lectus metus, at posuere neque. Sed pharetra nibh eget orci convallis at posuere leo convallis. Sed blandit augue vitae augue scelerisque bibendum [...]</p>
                                         <br/>
-                                        <a class="btn" href="blog-post.html">Read More</a>
+                                        <a class="btn" href="secondBlog">Read More</a>
                                     </div>
                                 </article>
                                 <!-- END ARTICLE -->
@@ -147,9 +120,11 @@
                                 </article>
                                 <!-- END ARTICLE -->
                             </div>
+
+                            <!--分页开始-->
                             <div class="col-md-12">
                                 <ul class="pagination">
-                                    <li><a href="javascript:;"><i class="fa fa-long-arrow-left"></i></a>
+                                    <li><a href="javascript:;"><i class="fa fa-angle-double-left" style="padding-top:10px;"></i></a>
                                     </li>
                                     <li><a href="javascript:;">1</a>
                                     </li>
@@ -159,86 +134,17 @@
                                     </li>
                                     <li><a href="javascript:;">4</a>
                                     </li>
-                                    <li><a href="javascript:;"><i class="fa fa-long-arrow-right"></i></a>
+                                    <li><a href="javascript:;"><i class="fa fa-angle-double-right" style="padding-top:10px;"></i></a>
                                     </li>
                                 </ul>
                             </div>
+                            <!--分页结束-->
+
                         </div>
                     </div>
-                    <div class="col-md-3 sidebar">
+                    <!--右侧导航栏-->
+                    {% include "include/rightNav.html" %}
 
-                        <div class="row widget">
-                            <div class="col-md-12">
-                                <form class="search-widget">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="search..">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button"><i class="fa fa-search"></i>
-                                            </button>
-                                        </span>
-                                    </div>
-                                    <!-- /input-group -->
-                                </form>
-                            </div>
-                        </div>
-                        <!-- /widget -->
-
-                        <div class="row widget">
-                            <div class="col-md-12">
-                                <div class="categories-widget">
-                                    <h3 class="widget-title">
-                                        Categories
-                                    </h3>
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:;">Photography</a> (5)
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">Web Design</a> (2)
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">Freebies</a> (5)
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">Inspiration</a> (12)
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">Creative</a> (8)
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /widget -->
-
-                        <div class="row widget">
-                            <div class="col-md-12">
-                                <div class="recent-post-widget">
-                                    <h3 class="widget-title">
-                                        Recent Posts
-                                    </h3>
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:;">Sed ut perspiciatis unde omnis iste</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">At vero eos et accusamus et iusto</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">Nam libero tempore, cum soluta nobis</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">Temporibus autem quibusdam et aut officiis</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">Itaque earum rerum hic tenetur</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /widget -->
-                    </div>
                 </div>
             </section>
             <!-- END BLOG -->
@@ -248,10 +154,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="social">
-                            <a href="javascript:;"><i class="fa fa-facebook"></i></a>
-                            <a href="javascript:;"><i class="fa fa-twitter"></i></a>
-                            <a href="javascript:;"><i class="fa fa-pinterest"></i></a>
-                            <a href="javascript:;"><i class="fa fa-dribbble"></i></a>
+                            <a href="javascript:;"><i class="fa fa-qq"></i></a>
+                            <a href="javascript:;"><i class="fa fa-weixin"></i></a>
+                            <a href="javascript:;"><i class="fa fa-weibo"></i></a>
+                            <a href="javascript:;"><i class="fa fa-tencent-weibo"></i></a>
                         </div>
                         <p>
                             Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/"></a>
@@ -276,7 +182,6 @@
     <script src="/static/public/team/js/bootstrap.min.js"></script>
     <script src="/static/public/team/js/lib/jquery.superslides.min.js"></script>
     <script src="/static/public/team/js/lib/smoothscroll.js"></script>
-    <script src="/static/public/team/js/lib/jquery.sudoslider.min.js"></script>
     <script src="/static/public/team/js/lib/jquery.bxslider.min.js"></script>
     <script src="/static/public/team/js/lib/jquery.mixitup.min.js"></script>
     <script src="/static/public/team/js/lib/jquery.backtotop.js"></script>

@@ -17,10 +17,10 @@ def blog(req):
 	"""
 	return render(req, "first/blog.html")
 
-def blog_post(req):
+def secondBlog(req):
 	"""
 	博文二级页
 	:param req:
 	:return:
 	"""
-	return render(req, "first/blog_post.html")
+	return render(req, "second/secondBlog.html")
