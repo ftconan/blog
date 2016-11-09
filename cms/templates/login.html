@@ -36,7 +36,7 @@
 				<form id="userForm" class="userForm" method="post" action="login" enctype="multipart/form-data">
 					<input type="text" name="account" class="text" id="account" placeholder="E-mail address" />
 					<input type="password" name="password" class="password" id="password" placeholder="Password" />
-					<div class="submit"><input type="submit" name="login" class="login" id="login" value="Login" ></div>
+					<div class="submit"><input type="submit" class="login" id="login" value="Login" ></div>
 					<div class="clearfix"></div>
 				</form>
 			</div>
@@ -49,5 +49,12 @@
 	<script src="/static/public/assets/js/jquery-1.10.2.js"></script>
 	<!-- Bootstrap Core JavaScript -->
 	<script src="/static/public/assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	<!--清空账号可密码-->
+		$(function(){
+			$("#account").val();
+			$("#password").val();
+		});
+	</script>
 </body>
 </html>
