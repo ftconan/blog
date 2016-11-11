@@ -15,4 +15,16 @@ urlpatterns = [
 	#发布博文
 	url(r'^addNews', load.addNews),
 	url(r'^newsList', load.newsList),
+
+	#栏目管理
+	url(r'^addClassification', load.addClassification),
+	url(r'^classificationList', load.classificationList),
+
+	#账户管理
+	url(r'^addAccount', load.addAccount),
+	url(r'^accountList', load.accountList),
+
+	#图片管理
+	url(r'^addPicture', load.addPicture),
+	url(r'^pictureList', load.pictureList),
 ]

@@ -26,3 +26,51 @@ def newsList(req):
 	:return:
 	"""
 	return render_to_response("first/newsList.html")
+
+def addClassification(req):
+	"""
+	添加栏目
+	:param req:
+	:return:
+	"""
+	return render_to_response("first/addClassification.html")
+
+def classificationList(req):
+	"""
+	栏目列表
+	:param req:
+	:return:
+	"""
+	return render_to_response("first/classificationList.html")
+
+def addAccount(req):
+	"""
+	添加账号
+	:param req:
+	:return:
+	"""
+	return render_to_response("first/addAccount.html")
+
+def accountList(req):
+	"""
+	账号列表
+	:param req:
+	:return:
+	"""
+	return render_to_response("first/accountList.html")
+
+def addPicture(req):
+	"""
+	添加图片
+	:param req:
+	:return:
+	"""
+	return render_to_response("first/addPicture.html")
+
+def pictureList(req):
+	"""
+	图片列表
+	:param req:
+	:return:
+	"""
+	return render_to_response("first/pictureList.html")
