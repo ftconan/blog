@@ -7,7 +7,7 @@ import load
 urlpatterns = [
 	#登录界面
 	url(r'^login$', views.login),
-	# url(r'^logout$', views.logout),
+	url(r'^logout$', views.logout),
 
 	#仪表盘
 	url(r'^dashboard', load.dashboard),
