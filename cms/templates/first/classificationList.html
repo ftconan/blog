@@ -3,8 +3,98 @@
 <head>
 	<meta charset="UTF-8">
 	<title>栏目列表</title>
+	<!-- Bootstrap Styles-->
+    <link href="/static/public/assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="/static/public/assets/css/font-awesome.css" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="/static/public/assets/css/custom-styles.css" rel="stylesheet" />
+	<!-- TABLE STYLES-->
+    <link href="/static/public/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />-->
 </head>
 <body>
-栏目列表
+<!--引入公用部分-->
+	{% include "include/nav.html" %}
+
+	<!-- /. NAV SIDE  -->
+	<div id="page-wrapper" >
+		<div id="page-inner">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="page-header">栏目管理 <small>栏目列表</small></h1>
+				</div>
+			</div>
+			<!-- /. ROW  -->
+
+			<div class="row">
+				<div class="col-md-12">
+					<!-- Advanced Tables -->
+					<div class="panel panel-default">
+						<!--<div class="panel-heading">-->
+							 <!--Advanced Tables-->
+						<!--</div>-->
+						<div class="panel-body">
+							<div class="table-responsive">
+								<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+									<thead>
+										<tr>
+											<th>栏目级别</th>
+											<th>栏目名称</th>
+											<th>上级目录</th>
+											<th>栏目顺序</th>
+											<th>是否启用</th>
+											<!--<th>操作</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="odd gradeX">
+											<td>Trident</td>
+											<td>Internet Explorer 4.0</td>
+											<td>Win 95+</td>
+											<td class="center">4</td>
+											<td class="center">X</td>
+										</tr>
+										<tr class="even gradeC">
+											<td>Trident</td>
+											<td>Internet Explorer 5.0</td>
+											<td>Win 95+</td>
+											<td class="center">5</td>
+											<td class="center">C</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!--End Advanced Tables -->
+				</div>
+			</div>
+			<footer style="text-align: center;">
+				<p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/"></a></p>
+			</footer>
+		</div>
+			 <!-- /. PAGE INNER  -->
+	</div>
+         <!-- /. PAGE WRAPPER  -->
+
+	<!-- JS Scripts-->
+    <!-- jQuery Js -->
+     <script src="/static/public/assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="/static/public/assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="/static/public/assets/js/jquery.metisMenu.js"></script>
+     <!-- DATA TABLE SCRIPTS -->
+    <script src="/static/public/assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="/static/public/assets/js/dataTables/dataTables.bootstrap.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#dataTables-example').dataTable();
+		});
+    </script>
+      <!-- Custom Js -->
+    <script src="/static/public/assets/js/custom-scripts.js"></script>
 </body>
 </html>
