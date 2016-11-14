@@ -9,8 +9,9 @@
     <link href="/static/public/assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Morris Chart Styles-->
     <link href="/static/public/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
-        <!-- Custom Styles-->
+	<!-- Custom Styles-->
     <link href="/static/public/assets/css/custom-styles.css" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href="/static/public/umeditor/themes/default/css/umeditor.css"/>
      <!-- Google Fonts-->
    <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />-->
 </head>
@@ -23,7 +24,7 @@
 		<div id="page-inner">
 			<div class="row">
 				<div class="col-md-12">
-					<h1 class="page-header">发布新闻 <small>添加新闻</small></h1>
+					<h1 class="page-header">发布博文 <small>添加博文</small></h1>
 				</div>
 			</div>
 
@@ -32,57 +33,82 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<form class="form-horizontal" action="">
-					<div class="form-group">
-						<label for="name" class="col-md-2 control-label">用户名:</label>
-						<div class="col-md-3">
-							<input type="text" class="form-control" id="name" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="account" class="col-md-2 control-label">登录账号:</label>
-						<div class="col-md-3">
-							<input type="text" class="form-control" id="account" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="password" class="col-md-2 control-label">密码:</label>
-						<div class="col-md-3">
-							<input type="password" class="form-control" id="password" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="state" class="col-md-2 control-label">用户身份:</label>
-						<div class="col-md-2">
-							<label for="admin" class="radio-inline">
-								<input type="radio" name="state" checked="checked" />管理员
-							</label>
-						</div>
-						<div class="col-md-2">
-							<label for="user" class="radio-inline">
-								<input type="radio" name="state" />用户
-							</label>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="isShow" class="col-md-2 control-label">是否启用:</label>
-						<div class="col-md-2">
-							<label for="use" class="radio-inline">
-								<input type="radio" name="isShow" checked="checked" />启用
-							</label>
-						</div>
-						<div class="col-md-2">
-							<label for="notUse" class="radio-inline">
-								<input type="radio" name="isShow" />禁用
-							</label>
-						</div>
-					</div>
-					<div class="form-group">
+								<div class="form-group">
+									<label for="firstClassification" class="col-md-2 control-label">一级栏目:</label>
+									<div class="col-md-3">
+										<select name="firstClassification" class="form-control" id="firstClassification">
+											<option value="0">请选择</option>
+											<option value="1">博文</option>
+											<option value="2">相册</option>
+											<option value="3">音乐</option>
+											<option value="4">视频</option>
+											<option value="5">分享</option>
+											<opttion valu="6">留言板</opttion>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="secondClassification" class="col-md-2 control-label">二级栏目:</label>
+									<div class="col-md-3">
+										<select name="secondClassification" class="form-control" id="secondClassification">
+											<option value="0">请选择</option>
+											<option value="1">博文</option>
+											<option value="2">相册</option>
+											<option value="3">音乐</option>
+											<option value="4">视频</option>
+											<option value="5">分享</option>
+											<opttion valu="6">留言板</opttion>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="title" class="col-md-2 control-label">标题:</label>
+									<div class="col-md-3">
+										<input type="text" class="form-control" id="title" />
+									</div>
+									<label for="pictureName" class="col-md-2 control-label">图片名称:</label>
+									<div class="col-md-3">
+										<input type="file" id="pictureName" style="margin-top: 5px;" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="briefNews" class="col-md-2 control-label">博文简介:</label>
+									<div class="col-md-3">
+										<textarea name="briefNews" class="form-control" id="briefNews" rows="9.5"></textarea>
+									</div>
+									<label for="picture" class="col-md-2 control-label">图片展示:</label>
+									<div class="col-md-4">
+										<img src="../static/public/team/images/portfolio/portfolio-thumb-5.jpg" class="img-responsive" alt="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="content" class="col-md-2 control-label">博文内容:</label>
+									<div class="col-md-9">
+										 <div id="content" style="height: 200px;">
+										 </div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="isTop" class="col-md-2 control-label">是否置顶:</label>
+									<div class="col-md-2">
+										<label for="isNotTop" class="radio-inline">
+											<input type="radio" name="isShow" checked="checked" />不置顶
+										</label>
+									</div>
+									<div class="col-md-2">
+										<label for="Top" class="radio-inline">
+											<input type="radio" name="isShow" />置顶
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
 									<div class="col-md-offset-2 col-md-3">
-										<button type="back" class="btn btn-default">返回</button>
+										<button type="back" class="btn btn-default" onclick="javascript:history.go(-1);">返回</button>
+										<button type="submit" class="btn btn-warning">暂存</button>
 										<button type="submit" class="btn btn-primary">添加</button>
 									</div>
 								</div>
-				</form>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -97,6 +123,14 @@
 	<!-- /. PAGE WRAPPER  -->
 
 	<!-- JS Scripts-->
+	<script type="text/javascript" src="/static/public/umeditor/third-party/jquery.min.js"></script>
+    <script src="/static/public/umeditor/umeditor.config.js" type="text/javascript"></script>
+    <script src="/static/public/umeditor/umeditor.min.js" type="text/javascript"></script>
+    <script src="/static/public/umeditor/lang/zh-CN/zh-CN.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //实例化编辑器
+        var um = UM.getEditor('content');
+    </script>
     <!-- jQuery Js -->
 	 <script src="/static/public/assets/js/jquery-1.10.2.js"></script>
       <!-- Bootstrap Js -->
