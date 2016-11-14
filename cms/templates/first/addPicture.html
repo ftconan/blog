@@ -32,56 +32,52 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<form class="form-horizontal" action="">
-					<div class="form-group">
-						<label for="name" class="col-md-2 control-label">用户名:</label>
-						<div class="col-md-3">
-							<input type="text" class="form-control" id="name" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="account" class="col-md-2 control-label">登录账号:</label>
-						<div class="col-md-3">
-							<input type="text" class="form-control" id="account" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="password" class="col-md-2 control-label">密码:</label>
-						<div class="col-md-3">
-							<input type="password" class="form-control" id="password" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="state" class="col-md-2 control-label">用户身份:</label>
-						<div class="col-md-2">
-							<label for="admin" class="radio-inline">
-								<input type="radio" name="state" checked="checked" />管理员
-							</label>
-						</div>
-						<div class="col-md-2">
-							<label for="user" class="radio-inline">
-								<input type="radio" name="state" />用户
-							</label>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="isShow" class="col-md-2 control-label">是否启用:</label>
-						<div class="col-md-2">
-							<label for="use" class="radio-inline">
-								<input type="radio" name="isShow" checked="checked" />启用
-							</label>
-						</div>
-						<div class="col-md-2">
-							<label for="notUse" class="radio-inline">
-								<input type="radio" name="isShow" />不启用
-							</label>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-md-offset-4 col-md-8">
-      						<button type="submit" class="btn btn-primary">添加</button>
-    					</div>
-					</div>
-				</form>
+								<div class="form-group">
+									<label for="clssificationName" class="col-md-2 control-label">所属栏目:</label>
+									<div class="col-md-3">
+										<select class="form-control" id="clssificationName" />
+											<option value="0">请选择</option>
+											<option value="1">博文</option>
+											<option value="2">相册</option>
+											<option value="3">音乐</option>
+											<option value="4">视频</option>
+											<option value="5">分享</option>
+											<opttion valu="6">留言板</opttion>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="pictureName" class="col-md-2 control-label">图片名称:</label>
+									<div class="col-md-3">
+										<input type="file" id="pictureName" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="password" class="col-md-2 control-label">图片展示:</label>
+									<div class="col-md-3">
+										<img src="../static/public/team/images/portfolio/portfolio-thumb-6.jpg" class="img-responsive" alt="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="isShow" class="col-md-2 control-label">是否启用:</label>
+									<div class="col-md-2">
+										<label for="use" class="radio-inline">
+											<input type="radio" name="isShow" checked="checked" />启用
+										</label>
+									</div>
+									<div class="col-md-2">
+										<label for="notUse" class="radio-inline">
+											<input type="radio" name="isShow" />禁用
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-offset-2 col-md-3">
+										<button type="back" class="btn btn-default">返回</button>
+										<button type="submit" class="btn btn-primary">添加</button>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>

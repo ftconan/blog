@@ -6,11 +6,11 @@ from django.db import models
 #1 栏目表 classification
 class Classification(models.Model):
 	classificationId = models.CharField(max_length=36, primary_key=True)
-	classificationIdlLevel = models.IntegerField()                              #栏目级别
+	classificationIdLevel = models.IntegerField()                               #栏目级别
 	parentDirectory = models.CharField(max_length=36, blank=True, null=True)    #上级目录
 	createTime = models.DateTimeField(auto_now_add=True)                        #创建时间
 	classificationName = models.CharField(max_length=50)                        #栏目名称
-	classificationFormat = models.IntegerField()                                #栏目内容格式(1:文本,2:图片,3:视频)
+	classificationFormat = models.IntegerField()                                #栏目内容格式(1:文本,2:图片,3:音乐,4:视频)
 	classificationOrder = models.IntegerField()                                 #顺序
 	isShow = models.BooleanField(default=1)                                     #是否启用
 
