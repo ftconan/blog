@@ -31,58 +31,58 @@
 				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<form class="form-horizontal" action="">
-					<div class="form-group">
-						<label for="userName" class="col-md-2 control-label">用户名:</label>
-						<div class="col-md-3">
-							<input type="text" class="form-control" id="userName" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="userAccount" class="col-md-2 control-label">登录账号:</label>
-						<div class="col-md-3">
-							<input type="text" class="form-control" id="userAccount" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="password" class="col-md-2 control-label">密码:</label>
-						<div class="col-md-3">
-							<input type="password" class="form-control" id="password" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="state" class="col-md-2 control-label">用户身份:</label>
-						<div class="col-md-2">
-							<label for="admin" class="radio-inline">
-								<input type="radio" name="state" checked="checked" />管理员
-							</label>
-						</div>
-						<div class="col-md-2">
-							<label for="user" class="radio-inline">
-								<input type="radio" name="state" />用户
-							</label>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="isShow" class="col-md-2 control-label">是否启用:</label>
-						<div class="col-md-2">
-							<label for="use" class="radio-inline">
-								<input type="radio" name="isShow" checked="checked" />启用
-							</label>
-						</div>
-						<div class="col-md-2">
-							<label for="notUse" class="radio-inline">
-								<input type="radio" name="isShow" />禁用
-							</label>
-						</div>
-					</div>
-					<div class="form-group">
-									<div class="col-md-offset-2 col-md-3">
-										<button type="back" class="btn btn-default">返回</button>
-										<button type="submit" class="btn btn-primary">添加</button>
+							<form class="form-horizontal" id="accountForm" enctype="multipart/form-data" method="post" action="/saveAccount/">
+								<div class="form-group">
+									<label for="userName" class="col-md-2 control-label">用户名:</label>
+									<div class="col-md-3">
+										<input type="text" name="userName" class="form-control" id="userName" />
 									</div>
 								</div>
-				</form>
+								<div class="form-group">
+									<label for="userAccount" class="col-md-2 control-label">登录账号:</label>
+									<div class="col-md-3">
+										<input type="text" name="userAccount" class="form-control" id="userAccount" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="password" class="col-md-2 control-label">密码:</label>
+									<div class="col-md-3">
+										<input type="password" name="password" class="form-control" id="password" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="state" class="col-md-2 control-label">用户身份:</label>
+									<div class="col-md-2">
+										<label for="admin" class="radio-inline">
+											<input type="radio" name="state" value="true" checked="checked" />管理员
+										</label>
+									</div>
+									<div class="col-md-2">
+										<label for="user" class="radio-inline">
+											<input type="radio" name="state" value="true" />用户
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="isShow" class="col-md-2 control-label">是否启用:</label>
+									<div class="col-md-2">
+										<label for="use" class="radio-inline">
+											<input type="radio" name="isShow" value="true" checked="checked" />启用
+										</label>
+									</div>
+									<div class="col-md-2">
+										<label for="notUse" class="radio-inline">
+											<input type="radio" name="isShow" value="false" />禁用
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-offset-2 col-md-3">
+										<button type="back" class="btn btn-default">返回</button>
+										<button type="submit" class="btn btn-primary" id="add">添加</button>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -98,7 +98,10 @@
 
 	<!-- JS Scripts-->
     <!-- jQuery Js -->
-	 <script src="/static/public/assets/js/jquery-1.10.2.js"></script>
+	<!--<script src="/static/public/assets/js/jquery-1.10.2.js"></script>-->
+	<script src="/static/public/jquery-1.7.2.min.js"></script>
+	<script src="/static/public/jquery.form.js"></script>
+	<script src="/static/js/first/addAccount.js"></script>
       <!-- Bootstrap Js -->
     <script src="/static/public/assets/js/bootstrap.min.js"></script>
     <!-- Metis Menu Js -->
@@ -108,8 +111,5 @@
     <!-- Morris Chart Js -->
     <script src="/static/public/assets/js/morris/raphael-2.1.0.min.js"></script>
     <script src="/static/public/assets/js/morris/morris.js"></script>
-
-	<script src="/static/public/assets/js/easypiechart.js"></script>
-	<script src="/static/public/assets/js/easypiechart-data.js"></script>
 </body>
 </html>
