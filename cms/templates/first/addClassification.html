@@ -31,33 +31,58 @@
 				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<form class="form-horizontal" action="">
+							<form class="form-horizontal" id="classForm" enctype="multipart/form-data" method="post" action="/saveClassification/">
 								<div class="form-group">
 									<label for="classificationIdLevel" class="col-md-2 control-label">栏目级别:</label>
 									<div class="col-md-3">
-										<select class="form-control" id="classificationIdLevel">
+										<select name="classificationIdLevel" class="form-control" id="classificationIdLevel">
 											<option value="0">请选择</option>
 											<option value="1">一级栏目</option>
 											<option value="2">二级栏目</option>
+											<option value="3">三级栏目</option>
 										</select>
 									</div>
 								</div>
-								<div class="form-group">
-									<label for="classificationName" class="col-md-2 control-label">栏目名称:</label>
+								<div class="firstClass form-group" style="display: none;">
+									<label for="firstClassText" class="col-md-2 control-label">一级栏目名称:</label>
 									<div class="col-md-3">
-										<input type="text" class="form-control" id="classificationName" />
+										<input name="firstClassText" type="text" class="form-control" id="firstClassText" />
+										<select name="firstClassSelect" class="form-control" id="firstClassSelect">
+											<option value="0">请选择</option>
+											{% for class in firstClassification %}
+											<option value="{{class.classificationId}}">{{class.classificationName}}</option>
+											{% endfor %}
+										</select>
+									</div>
+								</div>
+								<div class="secondClass form-group" style="display: none;">
+									<label for="secondClassText" class="col-md-2 control-label">二级栏目名称:</label>
+									<div class="col-md-3">
+										<input name="secondClassText" type="text" class="form-control" id="secondClassText" />
+										<select name="secondClassSelect" class="form-control" id="secondClassSelect">
+											<option value="0">请选择</option>
+											{% for class in secondClassification %}
+											<option value="{{class.classificationId}}">{{class.classificationName}}</option>
+											{% endfor %}
+										</select>
+									</div>
+								</div>
+								<div class="thirdClass form-group" style="display: none;">
+									<label for="thirdClassText" class="col-md-2 control-label">三级栏目名称:</label>
+									<div class="col-md-3">
+										<input name="thirdClassText" type="text" class="form-control" id="thirdClassText" />
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="classificationOrder" class="col-md-2 control-label">栏目顺序:</label>
 									<div class="col-md-3">
-										<input type="text" class="form-control" id="classificationOrder" />
+										<input name="classificationOrder" type="text" class="form-control" id="classificationOrder" />
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="classificationFormat" class="col-md-2 control-label">内容格式:</label>
 									<div class="col-md-3">
-										<input type="password" class="form-control" id="classificationFormat" placeholder="请输入1、2、3、4" />
+										<input type="text" name="classificationFormat" class="form-control" id="classificationFormat" placeholder="请输入1、2、3、4" />
 									</div>
 									<div class="col-md-7">
 										<p class="help-block" style="margin-top: -15px;">注:1:文本,2:图片,3:音乐,4:视频</p>
@@ -68,19 +93,19 @@
 									<label for="isShow" class="col-md-2 control-label">是否启用:</label>
 									<div class="col-md-2">
 										<label for="use" class="radio-inline">
-											<input type="radio" name="isShow" checked="checked" />启用
+											<input type="radio" name="isShow" value="true" checked="checked" />启用
 										</label>
 									</div>
 									<div class="col-md-2">
 										<label for="notUse" class="radio-inline">
-											<input type="radio" name="isShow" />禁用
+											<input type="radio" name="isShow" value="false" />禁用
 										</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-md-offset-2 col-md-3">
 										<button type="back" class="btn btn-default" onclick="javascript:history.go(-1);">返回</button>
-										<button type="button" class="btn btn-primary">添加</button>
+										<button type="button" class="btn btn-primary" id="add">添加</button>
 									</div>
 								</div>
 							</form>
@@ -99,7 +124,9 @@
 
 	<!-- JS Scripts-->
     <!-- jQuery Js -->
-	 <script src="/static/public/assets/js/jquery-1.10.2.js"></script>
+	<script src="/static/public/assets/js/jquery-1.10.2.js"></script>
+	<script src="/static/public/jquery.form.js"></script>
+	<script src="/static/js/first/addClassification.js"></script>
       <!-- Bootstrap Js -->
     <script src="/static/public/assets/js/bootstrap.min.js"></script>
     <!-- Metis Menu Js -->
@@ -109,8 +136,5 @@
     <!-- Morris Chart Js -->
     <script src="/static/public/assets/js/morris/raphael-2.1.0.min.js"></script>
     <script src="/static/public/assets/js/morris/morris.js"></script>
-
-	<script src="/static/public/assets/js/easypiechart.js"></script>
-	<script src="/static/public/assets/js/easypiechart-data.js"></script>
 </body>
 </html>

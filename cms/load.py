@@ -1,7 +1,8 @@
 # coding: utf-8
 
 from django.shortcuts import render_to_response
-from django.shortcuts import render
+from views import adminskip, judgeadmin
+from cms.models import News, Classification, User, Picture, Comment
 
 def dashboard(req):
 	"""
@@ -33,7 +34,15 @@ def addClassification(req):
 	:param req:
 	:return:
 	"""
-	return render_to_response("first/addClassification.html")
+	firstClassification = Classification.objects.filter(classificationIdLevel=1).order_by("classificationOrder")
+	# if 'update' in req.GET:
+	# 	classificationId = req.GET["classificationId"]
+	# 	classificationList = {}
+	# 	classification = Classification.objects.get(classificationId=classificationId)
+	# 	classificationList["classificationId"] = classification.classificationId
+	# 	classificationList["classificationName"] = classification.classificationName
+	# secondClassification = Classification.objects.filter(classificationIdLevel=2).order_by("classificationOrder")
+	return render_to_response("first/addClassification.html", {"firstClassification":firstClassification})
 
 def classificationList(req):
 	"""
