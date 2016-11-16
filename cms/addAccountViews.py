@@ -6,7 +6,6 @@ from django.http import HttpResponse
 from cms.models import User
 from django.views.decorators.csrf import csrf_exempt
 
-#添加账号模块开始
 @csrf_exempt
 def saveAccount(req):
 	"""
@@ -34,4 +33,3 @@ def saveAccount(req):
 	return HttpResponse(1)
 	# else:
 	# 	pass
-#添加账号模块结束

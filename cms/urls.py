@@ -5,6 +5,7 @@ from django.conf.urls import url
 import load
 import views
 from addAccountViews import saveAccount
+from addPictureViews import savePicture
 
 urlpatterns = [
 	#登录界面
@@ -32,5 +33,8 @@ urlpatterns = [
 	#图片管理
 	url(r'^addPicture', load.addPicture),
 	url(r'^pictureList', load.pictureList),
+
+	#添加图片
+	url(r'^savePicture', savePicture),
 
 ]
