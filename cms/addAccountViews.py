@@ -23,7 +23,7 @@ def saveAccount(req):
 	if state == "true":
 		state = 1
 	else:
-		state = 0
+		state = 2
 	if isShow == "true":
 		isShow = 1
 	else:

@@ -31,11 +31,11 @@
 				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<form class="form-horizontal" action="">
+							<form class="form-horizontal" enctype="multipart/form-data" method="post" action="/savePicture/">
 								<div class="form-group">
 									<label for="clssificationName" class="col-md-2 control-label">所属栏目:</label>
 									<div class="col-md-3">
-										<select class="form-control" id="clssificationName" />
+										<select name="classificationId" class="form-control" id="clssificationName" />
 											<option value="0">请选择</option>
 											<option value="1">博文</option>
 											<option value="2">相册</option>
@@ -49,7 +49,7 @@
 								<div class="form-group">
 									<label for="pictureName" class="col-md-2 control-label">图片名称:</label>
 									<div class="col-md-3">
-										<input type="file" id="pictureName" style="margin-top: 5px;" />
+										<input name="picturePath" type="file" id="pictureName" style="margin-top: 5px;" />
 									</div>
 								</div>
 								<div class="form-group">
@@ -73,8 +73,8 @@
 								</div>
 								<div class="form-group">
 									<div class="col-md-offset-2 col-md-3">
-										<button type="back" class="btn btn-default">返回</button>
-										<button type="submit" class="btn btn-primary">添加</button>
+										<button type="back" class="btn btn-default" onclick="javascript:history.go(-1);">返回</button>
+										<button type="button" class="btn btn-primary">添加</button>
 									</div>
 								</div>
 							</form>
@@ -93,7 +93,9 @@
 
 	<!-- JS Scripts-->
     <!-- jQuery Js -->
-	 <script src="/static/public/assets/js/jquery-1.10.2.js"></script>
+	<script src="/static/public/assets/js/jquery-1.10.2.js"></script>
+	<script src="/static/public/jquery.form.js"></script>
+	<script src="/static/js/first/addPicture.js"></script>
       <!-- Bootstrap Js -->
     <script src="/static/public/assets/js/bootstrap.min.js"></script>
     <!-- Metis Menu Js -->
