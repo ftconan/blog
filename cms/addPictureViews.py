@@ -5,6 +5,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 import os
 import uuid
+import json
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from cms.models import Picture, Classification
@@ -12,6 +13,23 @@ from django.views.decorators.csrf import csrf_exempt
 from PIL import Image
 
 basePath = os.path.dirname(os.path.dirname(__file__))
+
+@csrf_exempt
+def getPicturePosition(req):
+	"""
+	获取所属栏目
+	:param req:
+	:return:
+	"""
+	classification = Classification.objects.all().order_by("classificationIdLevel")    #根据栏目级别排序
+	List = []
+	for obj in classification:
+		classificationList = {}
+		classificationList["classificationId"] = obj.classificationId
+		classificationList["classificationName"] = obj.classificationName
+		classificationList["classificationIdLevel"] = obj.classificationIdLevel
+		List.append(classificationList)
+	return HttpResponse(json.dumps(List))
 
 @csrf_exempt
 def savePicture(req):

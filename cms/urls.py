@@ -6,7 +6,7 @@ import load
 import views
 from addClassificationViews import getClassification, saveClassification
 from addAccountViews import saveAccount
-from addPictureViews import savePicture
+from addPictureViews import getPicturePosition, savePicture
 
 urlpatterns = [
 	#登录界面
@@ -26,7 +26,7 @@ urlpatterns = [
 
 	#添加栏目
 	url(r'^getClassification', getClassification),      #获取栏目
-	url(r'^saveClassification', saveClassification),      #添加栏目
+	url(r'^saveClassification', saveClassification),    #添加栏目
 
 	#账户管理
 	url(r'^addAccount', load.addAccount),
@@ -41,5 +41,6 @@ urlpatterns = [
 
 	#添加图片
 	url(r'^savePicture', savePicture),
+	url(r'^getPicturePosition', getPicturePosition),   #获取所属栏目
 
 ]

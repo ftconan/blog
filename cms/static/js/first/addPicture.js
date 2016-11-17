@@ -1,4 +1,5 @@
 $(function(){
+    getPicturePosition();                               //获取所属栏目
     $("#uploadPicture").click(function(){            //点击上传按钮相当于点击了file按钮
         $("#pictureUrl").click();
     });
@@ -11,6 +12,19 @@ $(function(){
     });
 });
 
+//获取所属栏目
+function getPicturePosition(){
+    $.post("getPicturePosition",function(data){
+        var jsonData = $.parseJSON(data);
+        var str = "";
+        for(var i in jsonData){
+            str+="<option value="+jsonData[i].classificationId+">"+"("+jsonData[i].classificationIdLevel+")"+ jsonData[i].classificationName+"</option>";
+        }
+        $("#picturePosition").append(str);
+    });
+}
+
+//添加图片
 $("body").on("click","#add",function () {
     savePicture();
 });
