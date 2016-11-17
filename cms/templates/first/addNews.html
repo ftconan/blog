@@ -32,18 +32,15 @@
 				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<form class="form-horizontal" action="">
+							<form class="form-horizontal" id="newsForm" enctype="multipart/form-data" method="post" action="/saveNews/">
 								<div class="form-group">
 									<label for="firstClassification" class="col-md-2 control-label">一级栏目:</label>
 									<div class="col-md-3">
 										<select name="firstClassification" class="form-control" id="firstClassification">
 											<option value="0">请选择</option>
-											<option value="1">博文</option>
-											<option value="2">相册</option>
-											<option value="3">音乐</option>
-											<option value="4">视频</option>
-											<option value="5">分享</option>
-											<opttion valu="6">留言板</opttion>
+											{% for class in firstClassification %}
+											<option value="{{class.classificationId}}">{{class.classificationName}}</option>
+											{% endfor %}
 										</select>
 									</div>
 								</div>
@@ -52,23 +49,28 @@
 									<div class="col-md-3">
 										<select name="secondClassification" class="form-control" id="secondClassification">
 											<option value="0">请选择</option>
-											<option value="1">博文</option>
-											<option value="2">相册</option>
-											<option value="3">音乐</option>
-											<option value="4">视频</option>
-											<option value="5">分享</option>
-											<opttion valu="6">留言板</opttion>
+										</select>
+									</div>
+								</div>
+								<div class="thirdClass form-group" style="display: none;">
+									<label for="thirdClassification" class="col-md-2 control-label">三级栏目:</label>
+									<div class="col-md-3">
+										<select name="thirdClassification" class="form-control" id="thirdClassification">
 										</select>
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="title" class="col-md-2 control-label">标题:</label>
 									<div class="col-md-3">
-										<input type="text" class="form-control" id="title" />
+										<input type="text" name="title" class="form-control" id="title" />
 									</div>
-									<label for="pictureName" class="col-md-2 control-label">图片名称:</label>
+									<label for="pictureUrl" class="col-md-2 control-label">图片名称:</label>
+									<div class="col-md-1">
+										<input name="pictureUrl" type="file" class="hidden" id="pictureUrl" />
+										<input type="button" class="form-control btn-info" id="uploadPicture" value="上传" />
+									</div>
 									<div class="col-md-3">
-										<input type="file" id="pictureName" style="margin-top: 5px;" />
+										<input type="text" name="pictureName" class="form-control" id="pictureName" />
 									</div>
 								</div>
 								<div class="form-group">
@@ -76,36 +78,38 @@
 									<div class="col-md-3">
 										<textarea name="briefNews" class="form-control" id="briefNews" rows="9.5"></textarea>
 									</div>
-									<label for="picture" class="col-md-2 control-label">图片展示:</label>
+									<label for="imgName" class="col-md-2 control-label">图片展示:</label>
 									<div class="col-md-4">
-										<img src="../static/public/team/images/portfolio/portfolio-thumb-5.jpg" class="img-responsive" alt="">
+										<img src="" class="img-responsive" id="imgName" alt="">
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="content" class="col-md-2 control-label">博文内容:</label>
 									<div class="col-md-9">
-										 <div id="content" style="height: 200px;">
-										 </div>
+								 		<div id="content" style="height: 200px;">
+										</div>
+										<input type="text" name="newsContent" id="newsContent" value="{{news.content}}" style="display:none;" />
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="isTop" class="col-md-2 control-label">是否置顶:</label>
 									<div class="col-md-2">
 										<label for="isNotTop" class="radio-inline">
-											<input type="radio" name="isShow" checked="checked" />不置顶
+											<input type="radio" name="isTop" value="false" checked="checked" />不置顶
 										</label>
 									</div>
 									<div class="col-md-2">
 										<label for="Top" class="radio-inline">
-											<input type="radio" name="isShow" />置顶
+											<input type="radio" name="isTop" value="true" />置顶
 										</label>
 									</div>
 								</div>
+								<input type="text" name="status" value="{{news.status}}" style="display:none;" />
 								<div class="form-group">
 									<div class="col-md-offset-2 col-md-3">
 										<button type="back" class="btn btn-default" onclick="javascript:history.go(-1);">返回</button>
-										<button type="button" class="btn btn-warning">暂存</button>
-										<button type="button" class="btn btn-primary">添加</button>
+										<button type="button" class="btn btn-warning" id="laterSave">暂存</button>
+										<button type="button" class="btn btn-primary" id="saveNews">发布</button>
 									</div>
 								</div>
 							</form>
@@ -130,9 +134,14 @@
     <script type="text/javascript">
         //实例化编辑器
         var um = UM.getEditor('content');
+		$(function(){
+            $("#dashboard-menu").addClass("in");
+        })
     </script>
     <!-- jQuery Js -->
-	 <script src="/static/public/assets/js/jquery-1.10.2.js"></script>
+	<script src="/static/public/assets/js/jquery-1.10.2.js"></script>
+	<script src="/static/public/jquery.form.js"></script>
+	<script src="/static/js/first/addNews.js"></script>
       <!-- Bootstrap Js -->
     <script src="/static/public/assets/js/bootstrap.min.js"></script>
     <!-- Metis Menu Js -->
@@ -142,8 +151,5 @@
     <!-- Morris Chart Js -->
     <script src="/static/public/assets/js/morris/raphael-2.1.0.min.js"></script>
     <script src="/static/public/assets/js/morris/morris.js"></script>
-
-	<script src="/static/public/assets/js/easypiechart.js"></script>
-	<script src="/static/public/assets/js/easypiechart-data.js"></script>
 </body>
 </html>

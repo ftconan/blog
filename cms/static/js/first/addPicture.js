@@ -25,7 +25,7 @@ function getPicturePosition(){
 }
 
 //添加图片
-$("body").on("click","#add",function () {
+$("body").on("click","#savePicture",function () {
     savePicture();
 });
 

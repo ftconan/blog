@@ -4,6 +4,7 @@ from django.conf.urls import url
 
 import load
 import views
+from addNewsViews import saveNews
 from addClassificationViews import getClassification, saveClassification
 from addAccountViews import saveAccount
 from addPictureViews import getPicturePosition, savePicture
@@ -19,6 +20,9 @@ urlpatterns = [
 	#发布博文
 	url(r'^addNews', load.addNews),
 	url(r'^newsList', load.newsList),
+
+	#添加博文
+	url(r'^saveNews', saveNews),
 
 	#栏目管理
 	url(r'^addClassification', load.addClassification),
