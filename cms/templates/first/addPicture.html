@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加图片</title>
+	<!-- Bootstrap Styles-->
+    <link href="/static/public/assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="/static/public/assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="/static/public/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="/static/public/assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />-->
+</head>
+<body>
+<!--引入公用部分-->
+	{% include "include/nav.html" %}
+
+	<!-- /. NAV SIDE  -->
+		<div id="page-wrapper" >
+		<div id="page-inner">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="page-header">图片管理 <small>添加图片</small></h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<form class="form-horizontal" id="pictureForm" enctype="multipart/form-data" method="post" action="/savePicture/">
+								<div class="form-group">
+									<label for="picturePosition" class="col-md-2 control-label">所属栏目:</label>
+									<div class="col-md-3">
+										<select name="picturePosition" class="form-control" id="picturePosition" />
+											<option value="0">请选择</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="pictureName" class="col-md-2 control-label">图片名称:</label>
+									<div class="col-md-1">
+										<input name="pictureUrl" type="file" class="hidden" id="pictureUrl" />
+										<input type="button" class="form-control btn-info" id="uploadPicture" value="上传" />
+									</div>
+									<div class="col-md-2">
+										<input type="text" name="pictureName" class="form-control" id="pictureName" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="picture" class="col-md-2 control-label">图片展示:</label>
+									<div class="col-md-4">
+										<img src="" class="img-responsive" id="imgName" alt="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="isShow" class="col-md-2 control-label">是否启用:</label>
+									<div class="col-md-2">
+										<label for="use" class="radio-inline">
+											<input type="radio" name="isShow" value="true" checked="checked" />启用
+										</label>
+									</div>
+									<div class="col-md-2">
+										<label for="notUse" class="radio-inline">
+											<input type="radio" name="isShow" value="false" />禁用
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-offset-2 col-md-3">
+										<button type="back" class="btn btn-default" onclick="javascript:history.go(-1);">返回</button>
+										<button type="button" class="btn btn-primary" id="add">添加</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			 <!-- /. ROW  -->
+			 <footer style="text-align: center;">
+				 <p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/"></a></p>
+			 </footer>
+		</div>
+		 <!-- /. PAGE INNER  -->
+	</div>
+	<!-- /. PAGE WRAPPER  -->
+
+	<!-- JS Scripts-->
+    <!-- jQuery Js -->
+	<script src="/static/public/assets/js/jquery-1.10.2.js"></script>
+	<script src="/static/public/jquery.form.js"></script>
+	<script src="/static/js/first/addPicture.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="/static/public/assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="/static/public/assets/js/jquery.metisMenu.js"></script>
+      <!-- Custom Js -->
+    <script src="/static/public/assets/js/custom-scripts.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="/static/public/assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="/static/public/assets/js/morris/morris.js"></script>
+</body>
+</html>

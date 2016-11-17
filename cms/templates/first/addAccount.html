@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加账号</title>
+	<!-- Bootstrap Styles-->
+    <link href="/static/public/assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="/static/public/assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="/static/public/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="/static/public/assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />-->
+</head>
+<body>
+<!--引入公用部分-->
+	{% include "include/nav.html" %}
+
+	<!-- /. NAV SIDE  -->
+	<div id="page-wrapper" >
+		<div id="page-inner">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="page-header">账号管理 <small>添加账号</small></h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<form class="form-horizontal" id="accountForm" enctype="multipart/form-data" method="post" action="/saveAccount/">
+								<div class="form-group">
+									<label for="userName" class="col-md-2 control-label">用户名:</label>
+									<div class="col-md-3">
+										<input type="text" name="userName" class="form-control" id="userName" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="userAccount" class="col-md-2 control-label">登录账号:</label>
+									<div class="col-md-3">
+										<input type="text" name="userAccount" class="form-control" id="userAccount" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="password" class="col-md-2 control-label">密码:</label>
+									<div class="col-md-3">
+										<input type="password" name="password" class="form-control" id="password" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="state" class="col-md-2 control-label">用户身份:</label>
+									<div class="col-md-2">
+										<label for="admin" class="radio-inline">
+											<input type="radio" name="state" value="true" checked="checked" />管理员
+										</label>
+									</div>
+									<div class="col-md-2">
+										<label for="user" class="radio-inline">
+											<input type="radio" name="state" value="false" />用户
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="isShow" class="col-md-2 control-label">是否启用:</label>
+									<div class="col-md-2">
+										<label for="use" class="radio-inline">
+											<input type="radio" name="isShow" value="true" checked="checked" />启用
+										</label>
+									</div>
+									<div class="col-md-2">
+										<label for="notUse" class="radio-inline">
+											<input type="radio" name="isShow" value="false" />禁用
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-offset-2 col-md-3">
+										<button type="back" class="btn btn-default" onclick="javascript:history.go(-1);">返回</button>
+										<button type="button" class="btn btn-primary" id="add">添加</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			 <!-- /. ROW  -->
+			 <footer style="text-align: center;">
+				 <p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/"></a></p>
+			 </footer>
+		</div>
+		 <!-- /. PAGE INNER  -->
+	</div>
+	<!-- /. PAGE WRAPPER  -->
+
+	<!-- JS Scripts-->
+    <!-- jQuery Js -->
+	<script src="/static/public/assets/js/jquery-1.10.2.js"></script>
+	<script src="/static/public/jquery.form.js"></script>
+	<script src="/static/js/first/addAccount.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="/static/public/assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="/static/public/assets/js/jquery.metisMenu.js"></script>
+      <!-- Custom Js -->
+    <script src="/static/public/assets/js/custom-scripts.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="/static/public/assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="/static/public/assets/js/morris/morris.js"></script>
+</body>
+</html>

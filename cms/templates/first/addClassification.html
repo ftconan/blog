@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加栏目</title>
+	<!-- Bootstrap Styles-->
+    <link href="/static/public/assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="/static/public/assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="/static/public/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="/static/public/assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />-->
+</head>
+<body>
+<!--引入公用部分-->
+	{% include "include/nav.html" %}
+
+	<!-- /. NAV SIDE  -->
+	<div id="page-wrapper" >
+		<div id="page-inner">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="page-header">栏目管理 <small>添加栏目</small></h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<form class="form-horizontal" id="classForm" enctype="multipart/form-data" method="post" action="/saveClassification/">
+								<div class="form-group">
+									<label for="classificationIdLevel" class="col-md-2 control-label">栏目级别:</label>
+									<div class="col-md-3">
+										<select name="classificationIdLevel" class="form-control" id="classificationIdLevel">
+											<option value="0">请选择</option>
+											<option value="1">一级栏目</option>
+											<option value="2">二级栏目</option>
+											<option value="3">三级栏目</option>
+										</select>
+									</div>
+								</div>
+								<div class="firstClass form-group" style="display: none;">
+									<label for="firstClassText" class="col-md-2 control-label">一级栏目名称:</label>
+									<div class="col-md-3">
+										<input name="firstClassText" type="text" class="form-control" id="firstClassText" />
+										<select name="firstClassSelect" class="form-control" id="firstClassSelect">
+											<option value="0">请选择</option>
+											{% for class in firstClassification %}
+											<option value="{{class.classificationId}}">{{class.classificationName}}</option>
+											{% endfor %}
+										</select>
+									</div>
+								</div>
+								<div class="secondClass form-group" style="display: none;">
+									<label for="secondClassText" class="col-md-2 control-label">二级栏目名称:</label>
+									<div class="col-md-3">
+										<input name="secondClassText" type="text" class="form-control" id="secondClassText" />
+										<select name="secondClassSelect" class="form-control" id="secondClassSelect">
+											<option value="0">请选择</option>
+											{% for class in secondClassification %}
+											<option value="{{class.classificationId}}">{{class.classificationName}}</option>
+											{% endfor %}
+										</select>
+									</div>
+								</div>
+								<div class="thirdClass form-group" style="display: none;">
+									<label for="thirdClassText" class="col-md-2 control-label">三级栏目名称:</label>
+									<div class="col-md-3">
+										<input name="thirdClassText" type="text" class="form-control" id="thirdClassText" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="classificationOrder" class="col-md-2 control-label">栏目顺序:</label>
+									<div class="col-md-3">
+										<input name="classificationOrder" type="text" class="form-control" id="classificationOrder" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="classificationFormat" class="col-md-2 control-label">内容格式:</label>
+									<div class="col-md-3">
+										<input type="text" name="classificationFormat" class="form-control" id="classificationFormat" placeholder="请输入1、2、3、4" />
+									</div>
+									<div class="col-md-7">
+										<p class="help-block" style="margin-top: -15px;">注:1:文本,2:图片,3:音乐,4:视频</p>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="isShow" class="col-md-2 control-label">是否启用:</label>
+									<div class="col-md-2">
+										<label for="use" class="radio-inline">
+											<input type="radio" name="isShow" value="true" checked="checked" />启用
+										</label>
+									</div>
+									<div class="col-md-2">
+										<label for="notUse" class="radio-inline">
+											<input type="radio" name="isShow" value="false" />禁用
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-offset-2 col-md-3">
+										<button type="back" class="btn btn-default" onclick="javascript:history.go(-1);">返回</button>
+										<button type="button" class="btn btn-primary" id="add">添加</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			 <!-- /. ROW  -->
+			 <footer style="text-align: center;">
+				 <p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/"></a></p>
+			 </footer>
+		</div>
+		 <!-- /. PAGE INNER  -->
+	</div>
+	<!-- /. PAGE WRAPPER  -->
+
+	<!-- JS Scripts-->
+    <!-- jQuery Js -->
+	<script src="/static/public/assets/js/jquery-1.10.2.js"></script>
+	<script src="/static/public/jquery.form.js"></script>
+	<script src="/static/js/first/addClassification.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="/static/public/assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="/static/public/assets/js/jquery.metisMenu.js"></script>
+      <!-- Custom Js -->
+    <script src="/static/public/assets/js/custom-scripts.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="/static/public/assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="/static/public/assets/js/morris/morris.js"></script>
+</body>
+</html>
