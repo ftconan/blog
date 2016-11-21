@@ -8,6 +8,8 @@ from addNewsViews import saveNews
 from addClassificationViews import getClassification, saveClassification
 from addAccountViews import saveAccount
 from addPictureViews import getPicturePosition, savePicture
+from accountListViews import getAccountList, deleteAccount, getUserName
+from pictureListViews import getPictureList, deletePicture
 
 urlpatterns = [
 	#登录界面
@@ -39,6 +41,13 @@ urlpatterns = [
 	#添加账号
 	url(r'^saveAccount', saveAccount),
 
+	#删除账号
+	url(r'^deleteAccount', deleteAccount),
+
+	#账号列表
+	url(r'^getAccountList', getAccountList),
+	url(r'^getUserName', getUserName),                  #获取用户名称
+
 	#图片管理
 	url(r'^addPicture', load.addPicture),
 	url(r'^pictureList', load.pictureList),
@@ -46,5 +55,11 @@ urlpatterns = [
 	#添加图片
 	url(r'^savePicture', savePicture),
 	url(r'^getPicturePosition', getPicturePosition),   #获取所属栏目
+
+	#删除图片
+	url(r'^deletePicture', deletePicture),
+
+	#图片列表
+	url(r'^getPictureList', getPictureList),
 
 ]

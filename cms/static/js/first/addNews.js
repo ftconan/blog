@@ -27,7 +27,7 @@ $("body").on("change","#firstClassification",function () {
 $("body").on("change","#secondClassification",function () {
    $.post("getClassification",{"parentDirectory":$("#secondClassification").val()},function (data) {
        var jsonData = $.parseJSON(data);
-       var str = "<option value='0'>请选择</option>";
+       var str = "";
        for(var i in jsonData){
            str+="<option value="+jsonData[i].classificationId+">"+jsonData[i].classificationName+"</option>";
        }

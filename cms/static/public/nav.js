@@ -1,6 +1,6 @@
 $(function(){
-    $.post("getAdminName",function(data){          //传给getAdminName
+    $.post("getUserName",function(data){          //传给getUserName
         var str=data;
-        $("#adminName").append(str);
+        $("#userName").append(str);
     })
 })
