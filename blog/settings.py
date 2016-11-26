@@ -84,6 +84,12 @@ DATABASES = {
         'PASSWORD': 'root',
         'HOST': 'localhost',
         'POST': '3306',
+
+        # 'NAME': 'blog',
+        # 'USER': 'root',
+        # 'PASSWORD': 'root',
+        # 'HOST': '115.159.205.144',
+        # 'POST': '3306',
     }
 }
 
