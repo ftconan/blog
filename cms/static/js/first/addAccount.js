@@ -3,7 +3,7 @@ $(function(){
 });
 
 //添加账号
-$("body").on("click","#add",function(){
+$("body").on("click","#saveAccount",function(){
    saveAccount();
 });
 

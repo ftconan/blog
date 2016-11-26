@@ -18,7 +18,8 @@ def addNews(req):
 	:param req:
 	:return:
 	"""
-	return render_to_response("first/addNews.html")
+	firstClassification = Classification.objects.filter(classificationIdLevel=1).order_by("classificationOrder")
+	return render_to_response("first/addNews.html", {"firstClassification":firstClassification})
 
 def newsList(req):
 	"""

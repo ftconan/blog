@@ -49,7 +49,7 @@ def savePicture(req):
 	#保存图片
 	reqfile = req.FILES.get("pictureUrl", False)
 	if reqfile != False:
-		pictureUrl = "cms/static/img/classPic/"+pictureName+".jpg"
+		pictureUrl = "cms/static/img/classPic/"+pictureName
 		picturePath = os.path.join(basePath, pictureUrl)
 		img = Image.open(reqfile)
 		img.thumbnail((700, 700), Image.ANTIALIAS)         #对图片进行等比缩放

@@ -51,7 +51,7 @@ $("body").on("change","#firstClassSelect",function () {
 
 
 //添加栏目
-$("body").on("click","#add",function(){
+$("body").on("click","#saveClassification",function(){
     saveClassification();
 });
 
