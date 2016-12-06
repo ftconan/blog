@@ -22,6 +22,7 @@ function classificationList(){
 //删除栏目
 $("body").on("click",".delete",function(data){
    var classificationId = $(this).attr("id");
+    $("#classificationId").val(classificationId);
    if(confirm("确定要删除该条数据?")){
        $.post("deleteClassification",{"classificationId": classificationId},function(data){
            if(data){
