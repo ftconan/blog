@@ -8,6 +8,7 @@ from addNewsViews import saveNews
 from addClassificationViews import getClassification, saveClassification
 from addAccountViews import saveAccount
 from addPictureViews import getPicturePosition, savePicture
+from classificationListViews import getClassificationList, deleteClassification
 from accountListViews import getAccountList, deleteAccount, getUserName
 from pictureListViews import getPictureList, deletePicture
 
@@ -30,9 +31,15 @@ urlpatterns = [
 	url(r'^addClassification', load.addClassification),
 	url(r'^classificationList', load.classificationList),
 
+	#栏目列表
+	url(r'^getClassificationList', getClassificationList),      #获取栏目
+
 	#添加栏目
 	url(r'^getClassification', getClassification),      #获取栏目
 	url(r'^saveClassification', saveClassification),    #添加栏目
+
+	#删除栏目
+	url(r'^deleteClassification', deleteClassification),  # 添加栏目
 
 	#账户管理
 	url(r'^addAccount', load.addAccount),
