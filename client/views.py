@@ -72,7 +72,8 @@ def secondBlog(req):
 	:param req:
 	:return:
 	"""
-	return render(req, "second/secondBlog.html")
+	secondBlog1 = News.objects.filter(title = "美国互联网企业中国之梦褪色：立足也很难赚钱")
+	return render(req, "second/secondBlog.html", {"secondBlog1": secondBlog1})
 
 def secondAlbum(req):
 	"""

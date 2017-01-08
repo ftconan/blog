@@ -4,6 +4,14 @@ from django.shortcuts import render_to_response
 from views import adminskip, judgeadmin
 from cms.models import News, Classification, User, Picture, Comment
 
+def register(req):
+	"""
+	注册
+	:param req:
+	:return:
+	"""
+	return render_to_response("register.html")
+
 def dashboard(req):
 	"""
 	仪表盘

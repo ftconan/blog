@@ -7,33 +7,43 @@ import time
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 
+
 @csrf_exempt
 def login(req):
-	"""
-	管理员登录
-	:param req:
-	:return:
-	"""
-	if req.method == 'POST':
-		userAccount = req.POST["account"]
-		password = req.POST["password"]
-		userForm = [userAccount, password]
-		if userForm != "":
-			user = User.objects.filter(userAccount=userAccount)
-			if user.count() == 0:
-				return HttpResponse("<script type='text/javascript'>alert('用户名不存在');window.location.href='login';</script>")
-			if user[0].password != password:
-				return HttpResponse("<script type='text/javascript'>alert('用户名或密码错误');window.location.href='login';</script>")
-			else:
-				response = HttpResponseRedirect("newsList")
-				userId = user[0].userId
-				# 将userId写入浏览器cookies
-				response.set_cookie('userId', userId)
-				return response
-		else:
-			return HttpResponse("<script type='text/javascript'>alert('用户名或密码不能为空');window.location.href='login';</script>")
-	else:
-		return render_to_response("login.html")
+    """
+    管理员登录
+    :param req:
+    :return:
+    """
+    if req.method == 'POST':
+        userAccount = req.POST["account"]
+        password = req.POST["password"]
+        userForm = [userAccount, password]
+        user = User.objects.filter(userAccount=userAccount)
+        if userForm != "":
+            if user.count() == 0:
+                return HttpResponse("<script type='text/javascript'>alert('用户名不存在');window.location.href='login';</script>")
+            if user[0].password != password:
+                return HttpResponse(
+                    "<script type='text/javascript'>alert('用户名或密码错误');window.location.href='login';</script>")
+            else:
+                # 如果是普通用户，跳转到首页
+                if user[0].state == 2:
+                    response = HttpResponseRedirect("/client")
+                    userId = user[0].userId
+                    # 将userId写入浏览器cookies
+                    return response
+                else:
+                    response = HttpResponseRedirect("newsList")
+                    userId = user[0].userId
+                    # 将userId写入浏览器cookies
+                    response.set_cookie('userId', userId)
+                    return response
+        else:
+            return HttpResponse("<script type='text/javascript'>alert('用户名或密码不能为空');window.location.href='login';</script>")
+    else:
+        return render_to_response("login.html")
+
 
 def logout(req):
 	"""

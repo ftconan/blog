@@ -18,6 +18,9 @@ urlpatterns = [
 	url(r'^login$', views.login),
 	url(r'^logout$', views.logout),
 
+	# 注册界面
+	url(r'^register$', load.register),
+
 	#仪表盘
 	url(r'^dashboard', load.dashboard),
 

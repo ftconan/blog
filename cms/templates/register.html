@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Login</title>
+<title>register</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -36,8 +36,9 @@
 				<form id="userForm" class="userForm" method="post" action="login" enctype="multipart/form-data">
 					<input type="text" name="account" class="text" id="account" placeholder="请输入您的昵称" />
 					<input type="password" name="password" class="password" id="password" placeholder="请输入您的密码" />
+                    <input type="password" name="confirmPassword" class="password" id="confirmPassword" placeholder="请确认您输入的密码" />
 					<div class="submit"><input type="submit" class="login" id="login" value="Login" ></div>
-					<p>还没有账号，赶快注册一个吧！<a href="register">注册</a></p>
+					<p>您是否已经有账户了？<a href="login">登录</a></p>
 					<div class="clearfix"></div>
 				</form>
 			</div>

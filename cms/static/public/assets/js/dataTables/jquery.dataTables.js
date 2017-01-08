@@ -6495,7 +6495,7 @@
 				__arrayProto.forEach.call( this, fn, this );
 			}
 			else {
-				// Compatibility for browsers without EMCA-252-5 (JS 1.6)
+				// Compatibility for browsers without EMCA-252-5 (js 1.6)
 				for ( var i=0, ien=this.length ; i<ien; i++ ) {
 					// In strict mode the execution scope is the passed value
 					fn.call( this, this[i], i, this );
@@ -6514,7 +6514,7 @@
 				a = __arrayProto.filter.call( this, fn, this );
 			}
 			else {
-				// Compatibility for browsers without EMCA-252-5 (JS 1.6)
+				// Compatibility for browsers without EMCA-252-5 (js 1.6)
 				for ( var i=0, ien=this.length ; i<ien ; i++ ) {
 					if ( fn.call( this, this[i], i, this ) ) {
 						a.push( this[i] );
@@ -6634,7 +6634,7 @@
 				a = __arrayProto.map.call( this, fn, this );
 			}
 			else {
-				// Compatibility for browsers without EMCA-252-5 (JS 1.6)
+				// Compatibility for browsers without EMCA-252-5 (js 1.6)
 				for ( var i=0, ien=this.length ; i<ien ; i++ ) {
 					a.push( fn.call( this, this[i], i ) );
 				}

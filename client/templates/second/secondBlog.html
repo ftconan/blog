@@ -44,14 +44,14 @@
                             <div class="col-md-12">
                                 <!-- BEGIN ARTICLE -->
                                 <article class="post">
+                                    {% for blog in secondBlog1 %}
                                     <div class="post-thumb">
                                         <a href="blog-post.html">
-                                            <img src="/static/public/team/images/post-2.jpg" alt="Blog Post 1" />
+                                            <img src="{{ blog.briefPic }}" alt="Blog Post 1" />
                                         </a>
                                     </div>
                                     <div class="post-title">
-                                        <h1><a href="blog-post.html">美国互联网企业中国之梦褪色：立足也很难赚钱</a>
-                                        </h1>
+                                        <h1><a href="blog-post.html">{{ blog.title }}</a></h1>
                                     </div>
                                     <div class="post-meta">
                                         <span class="author">ScriptEden</span>
@@ -59,15 +59,10 @@
                                         <span class="comments-count"><a href="blog-post.html">5 Comments</a>
                                         </span>
                                     </div>
-                                    <div class="post-content">
-                                        <p>如今不到一年，除了中国市场之外，Netflix服务成功在许多地方登陆。据一份季度文件披露，Netflix通过给中国供应商授权许可的方式来获得“适度的”收入。Netflix公司对此拒绝置评。</p>
-                                        <p>Facebook的曲径策略——包括扎克伯格学汉语——收效甚微。亚马逊还在与中国本地的电商巨无霸阿里巴巴博弈。在取得最初的巨大成功之后，苹果正在被本土品牌超越。</p>
-                                        <p>12月14日，特朗普在特朗普大厦会见美国科技界大佬。会上业界领导者们抱怨中国要求外国技术公司要向有关部门递交软件源代码。</p>
-                                        <p>比尔·毕晓普（Bill Bishop）是一位技术顾问，同时是中国主题通讯《Sinocism》的作者。他描述了一些加州公司因为进军中国受挫而感到沮丧。</p>
-                                        <p>“十年前一些默默无闻的中国企业现已成为世界最大的公司。”他指的是阿里巴巴、腾讯、小米和百度等中国互联网巨头。这些公司有时会被称为中国版的亚马逊、Facebook、苹果和谷歌。</p>
-                                        <p>Facebook的曲径策略——包括扎克伯格学汉语——收效甚微。亚马逊还在与中国本地的电商巨无霸阿里巴巴博弈。在取得最初的巨大成功之后，苹果正在被本土品牌超越。</p>
-                                        <p>12月14日，特朗普在特朗普大厦会见美国科技界大佬。会上业界领导者们抱怨中国要求外国技术公司要向有关部门递交软件源代码。</p>
+                                    <div class="post-content" id="blogContent">
+                                        {{ blog.content }}
                                     </div>
+                                    {% endfor %}
                                 </article>
                                 <!-- END ARTICLE -->
                             </div>
@@ -90,113 +85,13 @@
 
                             <!-- BLOG COMMENTS -->
                             <div class="col-md-12">
-                                <div class="blog-comments">
-                                    <!-- BLOG REPLY -->
-                                    <h3>发表评论
-                                        <span>您的电子邮件地址将不会发布。</span>
-                                    </h3>
-                                    <form role="form">
-                                        <div class="form-group row">
-                                            <div class="col-md-8">
-                                                <input type="email" class="form-control col-md-6" placeholder="请输入您的邮箱">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-8">
-                                                <input type="text" class="form-control" placeholder="请输入您的昵称">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-8">
-                                                <textarea class="form-control" rows="10" placeholder="请输入您的评论"></textarea>
-                                            </div>
-                                        </div>
-                                        <br/>
-                                        <p>您可以使用这些
-                                            <abbr title="HyperText Markup Language">HTML</abbr>&nbsp;标记和属性:
-                                        </p>
-                                        <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt;</code>
-                                        <br/>
-                                        <button type="submit" class="btn">发表评论</button>
-                                    </form>
-                                    <!-- END BLOG REPLY -->
-
-                                    <h3>评论 (3)</h3>
-                                    <div class="blog-comment-content">
-                                        <ul class="media-list">
-                                            <li class="media">
-                                                <figure class="pull-left">
-                                                    <a href="javascript:;">
-                                                        <img class="media-object" src="/static/public/team/images/clients/avatar-1.jpg" alt="comment-1">
-                                                    </a>
-                                                </figure>
-                                                <div class="media-body">
-                                                    <div class="comment-meta">
-                                                        <h4 class="media-heading"><a href="javascript:;">Jane Pearson</a></h4>
-                                                        <span class="time">
-                                                            10 July 2015
-                                                        </span>
-                                                        <div class="comment-extra pull-right">
-                                                            <a href="javascript:;">回复<i class="fa fa-share"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <p>“科技企业家习惯一马平川的顺利前进，但中国市场的规则与他们所想并不一样。”WilmerHale律师事务所北京办事处合伙人莱斯特·罗斯（Lester Ross）说。 </p>
-                                                </div>
-                                            </li>
-                                            <li class="media">
-                                                <figure class="pull-left">
-                                                    <a href="javascript:;">
-                                                        <img class="media-object" src="/static/public/team/images/clients/avatar-2.jpg" alt="comment-1">
-                                                    </a>
-                                                </figure>
-                                                <div class="media-body">
-                                                    <div class="comment-meta">
-                                                        <h4 class="media-heading"><a href="javascript:;">Roy Royce</a></h4>
-                                                        <span class="in-reply">
-                                                            in Reply with Jane Pearson
-                                                        </span>
-                                                        <span class="time">
-                                                            1 Dec 2015
-                                                        </span>
-                                                        <div class="comment-extra pull-right">
-                                                            <a href="javascript:;">回复 <i class="fa fa-share"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <p>“科技企业家习惯一马平川的顺利前进，但中国市场的规则与他们所想并不一样。”WilmerHale律师事务所北京办事处合伙人莱斯特·罗斯（Lester Ross）说。 </p>
-                                                </div>
-                                            </li>
-                                            <li class="media">
-                                                <figure class="pull-left">
-                                                    <a href="javascript:;">
-                                                        <img class="media-object" src="/static/public/team/images/clients/avatar-3.jpg" alt="comment-1">
-                                                    </a>
-                                                </figure>
-                                                <div class="media-body">
-                                                    <div class="comment-meta">
-                                                        <h4 class="media-heading">Minion Max</h4>
-                                                        <span class="in-reply">
-                                                            in Reply with Roy Royce
-                                                        </span>
-                                                        <span class="time">
-                                                            5 Hours ago
-                                                        </span>
-                                                        <div class="comment-extra pull-right">
-                                                            <a href="javascript:;">回复 <i class="fa fa-share"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <p>“科技企业家习惯一马平川的顺利前进，但中国市场的规则与他们所想并不一样。”WilmerHale律师事务所北京办事处合伙人莱斯特·罗斯（Lester Ross）说。 </p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                {% include "include/comments.html" %}
                             </div>
                             <!-- END BLOG COMMENTS -->
                         </div>
                     </div>
                     <!--右侧导航栏-->
                     {% include "include/rightNav.html" %}
-
                 </div>
             </section>
             <!-- END BLOG -->
@@ -230,6 +125,7 @@
 
     <!-- Library Scripts -->
     <script src="/static/public/team/js/jquery-1.10.2.min.js"></script>
+    <script src="/static/public/team/js/jquery-1.10.2.js"></script>
     <script src="/static/public/team/js/lib/jquery.preloader.js"></script>
     <script src="/static/public/team/js/lib/nivo-lightbox.min.js"></script>
     <script src="/static/public/team/js/bootstrap.min.js"></script>
@@ -243,6 +139,7 @@
 
     <!-- Custom Script -->
     <script src="/static/public/team/js/main.js"></script>
+    <script src="/static/js/secondBlog.js"></script>
 </body>
 
 </html>
