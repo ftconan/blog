@@ -2,6 +2,6 @@
 // 用jQuery 替换 $
 jQuery(function(){
     // 将blog内容html化
-    var blogContent1 = jQuery("#blogContent").text();
-    jQuery("#blogContent").html(blogContent1);
+    var blogContent = jQuery("#blogContent").text();
+    jQuery("#blogContent").html(blogContent);
 });

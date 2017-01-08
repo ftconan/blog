@@ -24,7 +24,9 @@ def blog(req):
 	:param req:
 	:return:
 	"""
-	return render(req, "first/blog.html")
+	classId = Classification.objects.get(classificationName="科技").classificationId
+	blogs = News.objects.filter(classificationId_id=classId).order_by("-createTime")[:9]
+	return render(req, "first/blog.html", {"blogs": blogs})
 
 def album(req):
 	"""
@@ -72,7 +74,8 @@ def secondBlog(req):
 	:param req:
 	:return:
 	"""
-	secondBlog1 = News.objects.filter(title = "美国互联网企业中国之梦褪色：立足也很难赚钱")
+	newsId = req.GET["newsId"]
+	secondBlog1 = News.objects.filter(newsId=newsId)
 	return render(req, "second/secondBlog.html", {"secondBlog1": secondBlog1})
 
 def secondAlbum(req):
