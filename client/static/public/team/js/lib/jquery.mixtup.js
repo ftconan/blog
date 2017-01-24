@@ -51,6 +51,8 @@
                 a);
             a = f ? f : a
         }
+
+        // 线性3D平移变换
         for (var h = a.transitionSpeed, f = 0; 2 > f; f++) {
             var j = 0 == f ? j = a.prefix : "";
             a.transition[j + "transition"] = "all " + h + "ms linear";
@@ -318,6 +320,8 @@
         "" == b[0] && b.shift();
         return b
     }
+
+    // 初始化插件默认参数，函数
     var x = {
         init: function(c) {
             return this.each(function() {

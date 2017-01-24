@@ -21,12 +21,12 @@ class News(models.Model):
 	createTime = models.DateTimeField(auto_now_add=True)                  #创建时间
 	title = models.CharField(max_length=50)                               #新闻标题
 	briefPic = models.CharField(max_length=80, blank=True, null=True)     #简介图片
-	briefNews = models.CharField(max_length=200, blank=True, null=True)   #新闻简介
+	briefNews = models.CharField(max_length=300, blank=True, null=True)   #新闻简介
 	content = models.TextField()                                          #内容
 	status = models.IntegerField()                                        #状态1:发布,2:暂存
 	isTop = models.BooleanField(default=0)                                #是否置顶(0:不置顶)
 	alterTime = models.DateTimeField(auto_now_add=True)                   #修改时间
-	browseVolume = models.IntegerField(default=0)                         #新闻浏览量
+	browseVolume = models.IntegerField(default=0)                         #博文浏览量
 
 #3 用户表 user
 class User(models.Model):
