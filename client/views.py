@@ -9,7 +9,7 @@ def index(req):
 	:return:
 	"""
 	classId1 = Classification.objects.get(classificationName="科技").classificationId                                                  #科技栏目Id
-	sicenceBlog = News.objects.filter(classificationId_id=classId1).filter(status=1).order_by("isTop").order_by("-createTime")[:9]    #博文
+	sicenceBlog = News.objects.filter(classificationId_id=classId1).filter(isTop=1).order_by("isTop").order_by("-createTime")[:9]    #博文
 
 	classId2 = Classification.objects.get(classificationName="生活").classificationId
 	lifeBlog = News.objects.filter(classificationId_id=classId2).filter(status=1).order_by("isTop").order_by("-createTime")[:9]       # 博文

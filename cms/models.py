@@ -26,7 +26,7 @@ class News(models.Model):
 	status = models.IntegerField()                                        #状态1:发布,2:暂存
 	isTop = models.BooleanField(default=0)                                #是否置顶(0:不置顶)
 	alterTime = models.DateTimeField(auto_now_add=True)                   #修改时间
-	browseVolume = models.IntegerField(default=0)                         #新闻浏览量
+	browseVolume = models.IntegerField(default=0)                         #博文浏览量
 
 #3 用户表 user
 class User(models.Model):
